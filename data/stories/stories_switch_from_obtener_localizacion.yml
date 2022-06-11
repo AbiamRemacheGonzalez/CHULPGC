@@ -1,0 +1,145 @@
+version: "2.0"
+
+stories:
+
+- story: obtener_localizacion + switch to obtener_fecha, deny
+  steps:
+  - intent: obtener_localizacion
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+  - intent: obtener_fecha
+  - action: action_switch_forms_ask
+  - slot_was_set:
+    - next_form_name: formulario_obtener_fecha
+  - intent: deny
+  - action: action_switch_forms_deny
+  - slot_was_set:
+    - next_form_name: null
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+
+- story: obtener_localizacion + switch to obtener_contacto, deny
+  steps:
+  - intent: obtener_localizacion
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+  - intent: obtener_contacto
+  - action: action_switch_forms_ask
+  - slot_was_set:
+    - next_form_name: formulario_obtener_contacto
+  - intent: deny
+  - action: action_switch_forms_deny
+  - slot_was_set:
+    - next_form_name: null
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+    
+- story: obtener_localizacion + switch to obtener_fecha, affirm + switch back, deny
+  steps:
+  - intent: obtener_localizacion
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+  - intent: obtener_fecha
+  - action: action_switch_forms_ask
+  - slot_was_set:
+    - next_form_name: formulario_obtener_fecha
+  - intent: affirm
+  - action: action_switch_forms_affirm
+  - slot_was_set:
+    - next_form_name: null
+  - slot_was_set:
+    - previous_form_name: formulario_obtener_localizacion
+  - action: formulario_obtener_fecha
+  - active_loop: formulario_obtener_fecha
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_formulario_obtener_fecha
+  - action: action_switch_back_ask
+  - slot_was_set:
+    - previous_form_name: null
+  - intent: deny
+  - action: utter_ask_whatelse
+
+- story: obtener_localizacion + switch to obtener_contacto, affirm + switch back, deny
+  steps:
+  - intent: obtener_localizacion
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+  - intent: obtener_contacto
+  - action: action_switch_forms_ask
+  - slot_was_set:
+    - next_form_name: formulario_obtener_contacto
+  - intent: affirm
+  - action: action_switch_forms_affirm
+  - slot_was_set:
+    - next_form_name: null
+  - slot_was_set:
+    - previous_form_name: formulario_obtener_localizacion
+  - action: formulario_obtener_contacto
+  - active_loop: formulario_obtener_contacto
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_formulario_obtener_contacto
+  - action: action_switch_back_ask
+  - slot_was_set:
+    - previous_form_name: null
+  - intent: deny
+  - action: utter_ask_whatelse
+  
+- story: obtener_localizacion + switch to obtener_fecha, affirm + switch back, affirm
+  steps:
+  - intent: obtener_localizacion
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+  - intent: obtener_fecha
+  - action: action_switch_forms_ask
+  - slot_was_set:
+    - next_form_name: formulario_obtener_fecha
+  - intent: affirm
+  - action: action_switch_forms_affirm
+  - slot_was_set:
+    - next_form_name: null
+  - slot_was_set:
+    - previous_form_name: formulario_obtener_localizacion
+  - action: formulario_obtener_fecha
+  - active_loop: formulario_obtener_fecha
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_formulario_obtener_fecha
+  - action: action_switch_back_ask
+  - slot_was_set:
+    - previous_form_name: null
+  - intent: affirm
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+  
+- story: obtener_localizacion + switch to obtener_contacto, affirm + switch back, affirm
+  steps:
+  - intent: obtener_localizacion
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion
+  - intent: obtener_contacto
+  - action: action_switch_forms_ask
+  - slot_was_set:
+    - next_form_name: formulario_obtener_contacto
+  - intent: affirm
+  - action: action_switch_forms_affirm
+  - slot_was_set:
+    - next_form_name: null
+  - slot_was_set:
+    - previous_form_name: formulario_obtener_localizacion
+  - action: formulario_obtener_contacto
+  - active_loop: formulario_obtener_contacto
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_formulario_obtener_contacto
+  - action: action_switch_back_ask
+  - slot_was_set:
+    - previous_form_name: null
+  - intent: affirm
+  - action: formulario_obtener_localizacion
+  - active_loop: formulario_obtener_localizacion

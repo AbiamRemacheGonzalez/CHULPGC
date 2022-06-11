@@ -1,0 +1,163 @@
+version: "2.0"
+
+rules:
+
+#
+- rule: thankyou
+  steps:
+  - intent: gracias
+  - action: utter_noworries
+
+- rule: answer out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - action: utter_ayuda
+
+- rule: decir hola cuando se salude y ofrecer ayuda.
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - action: utter_ayuda
+
+- rule: ayuda
+  steps:
+  - intent: ayuda
+  - action: utter_ayuda
+
+- rule: Decir adiós siempre que se diga adiós.
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: Decir que "soy un robot" siempre que se rete al bot.
+  steps:
+  - intent: retar_bot
+  - action: utter_retar_bot
+
+- rule: Cuando se haga una petición resolver
+  steps:
+  - or: 
+    - intent: query_entities
+    - intent: obtener_definicion
+  - action: action_query_entities
+
+#SERVICIO DE BUSQUEDA DE LOCALIZACIONES
+- rule: activar buscar_localizacion mientra no haya otro formulario activo
+  condition:
+  # this condition allows stories to handle form switching
+  - active_loop: null
+  steps:
+    - intent: obtener_localizacion
+    - action: formulario_obtener_localizacion
+    - active_loop: formulario_obtener_localizacion
+
+- rule: Mantener el formulario buscar localización mientra no se cambie de formulario.
+  condition:
+  - active_loop: formulario_obtener_localizacion
+  - slot_was_set:
+    - previous_form_name: null
+  steps:
+  - action: formulario_obtener_localizacion
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_formulario_obtener_localizacion
+#SERVICIO DE BUSQUEDA DE FECHAS
+- rule: activar obtener_fecha mientra no haya otro formulario activo
+  condition:
+  - active_loop: null
+  steps:
+    - intent: obtener_fecha
+    - action: formulario_obtener_fecha
+    - active_loop: formulario_obtener_fecha
+
+- rule: Mantener el formulario obtener_fecha mientra no se cambie de formulario.
+  condition:
+  - active_loop: formulario_obtener_fecha
+  - slot_was_set:
+    - previous_form_name: null
+  steps:
+  - action: formulario_obtener_fecha
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_formulario_obtener_fecha
+
+#SERVICIO DE BUSQUEDA DE CONTACTOS
+- rule: activar obtener_contacto mientra no haya otro formulario activo
+  condition:
+  - active_loop: null
+  steps:
+    - intent: obtener_contacto
+    - action: formulario_obtener_contacto
+    - active_loop: formulario_obtener_contacto
+
+- rule: Mantener el formulario obtener_contacto mientra no se cambie de formulario.
+  condition:
+  - active_loop: formulario_obtener_contacto
+  - slot_was_set:
+    - previous_form_name: null
+  steps:
+  - action: formulario_obtener_contacto
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_formulario_obtener_contacto
+
+#SERVICIO DE AYUDA
+
+- rule: cuando se pida ayuda sobre localizaciones dar ayuda
+  steps:
+  - intent: ayuda_localizaciones
+  - action: utter_ayuda_localizaciones
+
+- rule: cuando se pida ayuda sobre fechas dar ayuda
+  steps:
+  - intent: ayuda_fechas
+  - action: utter_ayuda_fechas
+
+- rule: cuando se pida ayuda sobre contactos dar ayuda
+  steps:
+  - intent: ayuda_contactos
+  - action: utter_ayuda_contactos
+
+- rule: cuando se pida ayuda sobre conceptos dar ayuda
+  steps:
+  - intent: ayuda_conceptos
+  - action: utter_ayuda_conceptos
+
+- rule: cuando se pida ayuda sobre extras dar ayuda
+  steps:
+  - intent: ayuda_extras
+  - action: utter_ayuda_extras
+
+- rule: cuando se pida ayuda sobre miulgc meter en bucles de menus
+  steps:
+  - intent: ayuda_miulpgc
+  - action: utter_ayuda_miulpgc
+
+- rule: cuando se pida información sobre mis datos darla
+  steps:
+  - intent: mis_datos_info
+  - action: utter_mis_datos_info
+
+- rule: cuando se pida información sobre mi evaluación darla
+  steps:
+  - intent: mi_evaluacion_info
+  - action: utter_mi_evaluacion_info
+
+- rule: cuando se pida información sobre mi campus virtual darla
+  steps:
+  - intent: mi_campus_virtual_info
+  - action: utter_mi_campus_virtual_info
+
+- rule: cuando se pida información sobre mis utilidades darla
+  steps:
+  - intent: mis_utilidades_info
+  - action: utter_mis_utilidades_info
+
+- rule: cuando se pida información sobre mi matricula darla
+  steps:
+  - intent: mi_matricula_info
+  - action: utter_mi_matricula_info

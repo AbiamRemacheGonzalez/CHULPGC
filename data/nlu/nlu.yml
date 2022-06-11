@@ -1,0 +1,586 @@
+version: "2.0"
+
+nlu:
+- intent: obtener_contacto
+  examples: |
+    - Contacto
+    - Quiero un contacto.
+    - ¿Que contactos puedes darme?
+    - Listame los contactos.
+    - Muestrame los contactos
+    - Contactar con el [servicio de información al estudiante]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}.
+    - Quiero contactar con [información al estudiante]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}.
+    - Puedes darme el número de telefono del [servicio de información al estudiante]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}.
+    - Quiero el correo electrónico del [servicio de información al estudiante]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}.
+    - Me gustaría saber si puedo contactar con [información al estudiante]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}.
+    - ¿Cómo puedo contactar con el [sie]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}?
+    - ¿Cuál es el número de teléfono del [sie]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}?
+    - ¿Cual es el correo electrónico del [servicio de información al estudiante]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}?
+    - ¿Cuál es la página web del [servicio de información al estudiante]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}?
+    - ¿Cómo puedo contactar con la [trabajadora social]{"entity":"contacto","value":"TRABAJADORA SOCIAL"}?
+    - ¿Cuál es el número de teléfono de la [trabajadora social]{"entity":"contacto","value":"TRABAJADORA SOCIAL"}?
+    - ¿Cual es el correo electrónico de la [trabajadora social]{"entity":"contacto","value":"TRABAJADORA SOCIAL"}?
+    - ¿Cuál es la página web de la [trabajadora social]{"entity":"contacto","value":"TRABAJADORA SOCIAL"}?
+    - Contactar con el [registro general]{"entity":"contacto","value":"REGISTRO GENERAL"}.
+    - Quiero contactar con el [registro general]{"entity":"contacto","value":"REGISTRO GENERAL"}.
+    - Puedes darme el número de telefono del [registro general]{"entity":"contacto","value":"REGISTRO GENERAL"}.
+    - Quiero el correo electrónico del [registro]{"entity":"contacto","value":"REGISTRO GENERAL"}.
+    - Contactar con la [biblioteca]{"entity":"contacto","value":"BIBLIOTECA UNIVERSITARIA"}.
+    - Me gustaría saber si puedo contactar con la [biblioteca universitaria]{"entity":"contacto","value":"BIBLIOTECA UNIVERSITARIA"}.
+    - ¿Cuál es la página web de la [biblioteca]{"entity":"contacto","value":"BIBLIOTECA UNIVERSITARIA"}?
+    - Contactar con el [aula de idiomas]{"entity":"contacto","value":"AULA DE IDIOMAS"}.
+    - Quiero contactar con el [aula de idiomas]{"entity":"contacto","value":"AULA DE IDIOMAS"}.
+    - Puedes darme el número de telefono del [aula de idiomas]{"entity":"contacto","value":"AULA DE IDIOMAS"}.
+    - Quiero el correo electrónico del [aula de idiomas]{"entity":"contacto","value":"AULA DE IDIOMAS"}.  
+    - Me gustaría saber si puedo contactar con la [residencia]{"entity":"contacto","value":"ALOJAMIENTO UNIVERSITARIO"}.
+    - Contactar con la [residencia universitaria]{"entity":"contacto","value":"ALOJAMIENTO UNIVERSITARIO"}.
+    - Quiero contactar con la [residencia universitaria]{"entity":"contacto","value":"ALOJAMIENTO UNIVERSITARIO"}.
+    - Puedes darme el número de telefono de la [residencia universitaria]{"entity":"contacto","value":"ALOJAMIENTO UNIVERSITARIO"}.
+    - Contactar con el [servi de deportes]{"entity":"contacto","value":"SERVICIO DE DEPORTES"}.
+    - ¿Cómo puedo contactar con el [servicio de deportes]{"entity":"contacto","value":"SERVICIO DE DEPORTES"}?
+    - ¿Cuál es el número de teléfono del [servicio de deporte]{"entity":"contacto","value":"SERVICIO DE DEPORTES"}?
+    - ¿Cual es el correo electrónico del [servicio de deportes]{"entity":"contacto","value":"SERVICIO DE DEPORTES"}?
+    - ¿Cuál es la página web del [servicio de deportes]{"entity":"contacto","value":"SERVICIO DE DEPORTES"}?
+    - Contactar con la [sede institucional]{"entity":"contacto","value":"SEDE INSTITUCIONAL"}.
+    - Quiero el correo electrónico de la [sede institucional]{"entity":"contacto","value":"SEDE INSTITUCIONAL"}.
+    - Me gustaría saber si puedo contactar con la [sede institucional]{"entity":"contacto","value":"SEDE INSTITUCIONAL"}.
+    - ¿Cómo puedo contactar con la [sede]{"entity":"contacto","value":"SEDE INSTITUCIONAL"}?
+    - ¿Cuál es el número de teléfono de la [sede institucional]{"entity":"contacto","value":"SEDE INSTITUCIONAL"}?
+    - ¿Cual es el correo electrónico de la [sede institucional]{"entity":"contacto","value":"SEDE INSTITUCIONAL"}?
+    - ¿Cuál es la página web de la [sede]{"entity":"contacto","value":"SEDE INSTITUCIONAL"}?
+    - Contactar con el [servicio de informática]{"entity":"contacto","value":"SERVICIO DE INFORMÁTICA"}.
+    - Quiero contactar con [servicio de informatica]{"entity":"contacto","value":"SERVICIO DE INFORMÁTICA"}.
+    - Puedes darme el número de telefono del [servicio de informática]{"entity":"contacto","value":"SERVICIO DE INFORMÁTICA"}.
+    - Quiero el correo electrónico del [servicio de informatica]{"entity":"contacto","value":"SERVICIO DE INFORMÁTICA"}.
+    - Me gustaría saber si puedo contactar con el [servicio de informática]{"entity":"contacto","value":"SERVICIO DE INFORMÁTICA"}.
+    - Contactar con mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+    - Quiero contactar con mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+    - Puedes darme el número de telefono de mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+    - Quiero el correo electrónico de mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+    - Me gustaría saber si puedo contactar con mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+    - ¿Cómo puedo contactar con mi [profesor]{"entity":"contacto","value":"PROFESORADO"}?
+    - ¿Cuál es el número de teléfono de mi [profesor]{"entity":"contacto","value":"PROFESORADO"}?
+    - ¿Cual es el correo electrónico de mi [profesor]{"entity":"contacto","value":"PROFESORADO"}?
+    - Quiero contactar con mis [profesores]{"entity":"contacto","value":"PROFESORADO"}.
+    - Quiero saber el numero de telefono de mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+    - Quiero saber el correo electrónico de mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+    - ¿Puedo contactar con mis [profesores]{"entity":"contacto","value":"PROFESORADO"}?
+    - Necesito el contacto de mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+    - Quiero el correo de mi [profesor]{"entity":"contacto","value":"PROFESORADO"}.
+- intent: obtener_fecha
+  examples: |
+    - ¿cuando [empieza]{"entity":"rango","value":"inicio"} el [curso](evento)?
+    - ¿cuando [comienza]{"entity":"rango","value":"inicio"} el [curso](evento)?
+    - ¿cuando [inicia]{"entity":"rango","value":"inicio"} el [curso](evento)?
+    - ¿cuando [inaugura]{"entity":"rango","value":"inicio"} el [curso](evento)?
+    - ¿cuando [arranca]{"entity":"rango","value":"inicio"} el [curso](evento)?
+    - ¿Cuanto dura el [curso](evento)?
+    - ¿Cuanto durará el [curso](evento) actual?
+    - Duración del [curso](evento).
+    - ¿cuando [termina]{"entity":"rango","value":"fin"} el [curso](evento)?
+    - ¿cuando [acaba]{"entity":"rango","value":"fin"} el [curso](evento)?
+    - ¿cuando [finaliza]{"entity":"rango","value":"fin"} el [curso](evento)?
+    - ¿cuando [concluye]{"entity":"rango","value":"fin"} el [curso](evento)?
+    - ¿cuando [empiezan]{"entity":"rango","value":"inicio"}  las [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [empieza]{"entity":"rango","value":"inicio"} el [1er trimestre]{"entity": "trimestre", "value":"PRIMER SEMESTRE"} de [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [inician]{"entity":"rango","value":"inicio"} las [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [inicia]{"entity":"rango","value":"inicio"} el [1er semestre]{"entity": "trimestre", "value":"PRIMER SEMESTRE"} de [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [comienzan]{"entity":"rango","value":"inicio"} las [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [comienza]{"entity":"rango","value":"inicio"} el [primer trimestre]{"entity": "trimestre", "value":"PRIMER SEMESTRE"} de [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿Cuanto duran las [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿Cuanto dura el [primer semestre]{"entity": "trimestre", "value":"PRIMER SEMESTRE"} de [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿Cuanto durará el periodo de [clase]{"entity": "evento", "value": "CLASES"} actual?
+    - ¿Cuanto durará el [2do trimestre]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"} de [clases]{"entity": "evento", "value": "CLASES"} actual?
+    - Duración de las [clases]{"entity": "evento", "value": "CLASES"}.
+    - Duración de las [clases]{"entity": "evento", "value": "CLASES"} en el [2do semestre]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"}.
+    - ¿cuando [terminan]{"entity":"rango","value":"fin"} las [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [termina]{"entity":"rango","value":"fin"} el [segundo trimestre]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"} de [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [acaban]{"entity":"rango","value":"fin"} las [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [acaba]{"entity":"rango","value":"fin"} el [segundo semestre]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"} de [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [finalizan]{"entity":"rango","value":"fin"} las [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [finalizan]{"entity":"rango","value":"fin"} las [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [concluye]{"entity":"rango","value":"fin"} el [semestre segundo]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"} de [clases]{"entity": "evento", "value": "CLASES"}?
+    - ¿cuando [empiezan]{"entity":"rango","value":"inicio"}  los [exámenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿cuando [comienza]{"entity":"rango","value":"inicio"} la [convocatoria]{"entity": "evento", "value": "EVALUACIONES"} [ordinaria](convocatoria)?
+    - ¿cuando [comienza]{"entity":"rango","value":"inicio"} la [convocatoria]{"entity": "evento", "value": "EVALUACIONES"} [especial](convocatoria)?
+    - ¿cuando [comienza]{"entity":"rango","value":"inicio"} la [convocatoria]{"entity": "evento", "value": "EVALUACIONES"} [extraordinaria](convocatoria)?
+    - ¿Cuanto duran los [exámenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿Cuanto duran los [examenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿cuando son los [exámenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿cuando son los [examenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - Duración de los [exámenes]{"entity": "evento", "value": "EVALUACIONES"}
+    - Duración de los [examenes]{"entity": "evento", "value": "EVALUACIONES"}
+    - ¿Cuanto dura la [convocatoria]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿Cuanto duran los [exámenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿cuando es la [convocatoria]{"entity": "evento", "value": "EVALUACIONES"}?
+    - Duración de las [convocatorias]{"entity": "evento", "value": "EVALUACIONES"}
+    - ¿Cuanto dura la [convocatoria]{"entity": "evento", "value": "EVALUACIONES"} [extraordinaria](convocatoria)?
+    - ¿cuando [terminan]{"entity":"rango","value":"fin"}  los [exámenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿cuando [terminan]{"entity":"rango","value":"fin"}  los [examenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿cuando [terminan]{"entity":"rango","value":"fin"}  los [exámenes]{"entity": "evento", "value": "EVALUACIONES"} de la convocatoria [extraordinaria](convocatoria)?
+    - ¿cuando [acaba]{"entity":"rango","value":"fin"}  la [convocatoria]{"entity": "evento", "value": "EVALUACIONES"} [ordinaria](convocatoria)?
+    - ¿cuando [concluye]{"entity":"rango","value":"fin"} la [convocatoria]{"entity": "evento", "value": "EVALUACIONES"} [extraordinaria](convocatoria)?
+    - ¿cuando [inician]{"entity":"rango","value":"inicio"} las [vacaciones]{"entity": "evento", "value": "VACACIONES"} de [verano](vacaciones)?
+    - ¿cuando [inicia]{"entity":"rango","value":"inicio"} el [verano](vacaciones)?
+    - ¿cuando [comienza]{"entity":"rango","value":"inicio"} las [vacaciones]{"entity": "evento", "value": "VACACIONES"} de [semana santa](vacaciones)?
+    - ¿cuando [inicia]{"entity":"rango","value":"inicio"} [samana santa](vacaciones)?
+    - ¿cuando [comienza]{"entity":"rango","value":"inicio"} las [vacaciones]{"entity": "evento", "value": "VACACIONES"} de [navidad](vacaciones)?
+    - ¿cuando [inicia]{"entity":"rango","value":"inicio"} la [navidad](vacaciones)?
+    - ¿Cuanto dura el [navidad](vacaciones)?
+    - Duración de las [vacaciones]{"entity": "evento", "value": "VACACIONES"} de [semana santa](vacaciones).
+    - ¿Cuanto dura [verano](vacaciones)?
+    - ¿Cuanto duran las [vacaciones]{"entity": "evento", "value": "VACACIONES"}?
+    - Duranción de las [vacaciones]{"entity": "evento", "value": "VACACIONES"}
+    - ¿cuando [acaba]{"entity":"rango","value":"fin"} el [verano](vacaciones)?
+    - ¿cuando [finaliza]{"entity":"rango","value":"fin"} las [vacaciones]{"entity": "evento", "value": "VACACIONES"} de [semana santa](vacaciones)?
+    - ¿cuando [concluye]{"entity":"rango","value":"fin"} las [vacaciones]{"entity": "evento", "value": "VACACIONES"} de [verano](vacaciones)?
+- intent: obtener_localizacion
+  examples: |
+    - ¿Dónde está la facultad de [INGENIERÍA INFORMÁTICA]{"entity": "nombre_carrera", "value": "INGENIERÍA INFORMÁTICA"}?
+    - ¿Dónde está la facultad de [INGLES-FRANCES]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-FRANCÉS"}?
+    - ¿Dónde está la facultad de [HISTORIA](nombre_carrera)?
+    - ¿Dónde está la facultad de [TRABAJO SOCIAL](nombre_carrera)?
+    - ¿Dónde está la facultad de [EDUCACIÓN INFANTIL]{"entity": "nombre_carrera", "value": "EDUCACIÓN INFANTIL"}?
+    - ¿Dónde está la facultad de [INGENIERÍA EN TECNOLOGÍA NAVAL]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍA NAVAL"}?
+    - ¿Dónde está la facultad de [CIENCIAS DE LA ACTIVIDAD FÍSICA Y DEL DEPORTE}{"entity": "nombre_carrera", "value": "CIENCIAS DE LA ACTIVIDAD FÍSICA Y DEL DEPORTE"}?
+    - ¿Dónde está la facultad de [FISIOTERAPIA](nombre_carrera)?
+    - ¿Dónde está la facultad de [MECANICA]{"entity": "nombre_carrera", "value": "INGENIERÍA MECÁNICA"}?
+    - ¿Dónde está la facultad de [RECURSOS HUMANOS]{"entity": "nombre_carrera", "value": "RELACIONES LABORALES Y RECURSOS HUMANOS"}?
+    - ¿Dónde está la facultad de [INFORMÁTICA]{"entity": "nombre_carrera", "value": "INGENIERÍA INFORMÁTICA"}?
+    - ¿Dónde está la facultad de [arquitectura](nombre_carrera)?
+    - ¿Dónde está la facultad de [ingeniería civil](nombre_carrera)?
+    - ¿Dónde está la facultad de [ingeniería de datos](nombre_carrera)?
+    - ¿Dónde está la facultad de [INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}?
+    - ¿Dónde está la facultad de [telecomunicaciones]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}?
+    - ¿Dónde está la facultad de [teleco]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}?
+    - ¿Quiero saber donde esta mi facultad?
+    - ¿Quiero saber donde encontrar mi facultad?
+    - ¿Dónde esta la facultad de mi carrera?
+    - Localización de mi facultad
+    - Localización de [INGENIERÍA INFORMÁTICA]{"entity": "nombre_carrera", "value": "INGENIERÍA INFORMÁTICA"}
+    - Localización de [telecomunicaciones]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}
+    - Localización de la facultad de [arquitectura](nombre_carrera)
+    - ¿Cuál es la localización de mi facultad?
+    - Me gustaría saber la localización de mi facultad.
+    - ¿En que lugar esta mi facultad?
+    - ¿En que lugar está la facultad de [telecomunicaciones]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}?
+    - ¿En que lugar está la facultad de [CIENCIA E INGENIERIA DE DATOS]{"entity": "nombre_carrera", "value": "CIENCIA E INGENIERÍA DE DATOS"}?
+    - ¿En que lugar está la facultad de [informática]{"entity": "nombre_carrera", "value": "INGENIERÍA INFORMÁTICA"}?
+    - ¿Dónde está el [servicio de información al estudiante]{"entity": "institucion", "value": "SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}?
+    - Quiero saber donde está el [servicio de informacion al estudiante]{"entity": "institucion", "value": "SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}
+    - Localización del [sie]{"entity": "institucion", "value": "SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}
+    - ¿Cuál es la localización del [servicio del estudiante]{"entity": "institucion", "value": "SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}?
+    - ¿Dónde está la [BIBLIOTECA UNIVERSITARIA]{"entity": "institucion", "value": "BIBLIOTECA UNIVERSITARIA"}?
+    - Quiero saber donde está la [BIBLIOTECA UNIVERSITARIA]{"entity": "institucion", "value": "BIBLIOTECA UNIVERSITARIA"}
+    - Localización de la [BIBLIOTECA]{"entity": "institucion", "value": "BIBLIOTECA UNIVERSITARIA"}
+    - ¿Cuál es la localización de la [BIBLIOTECA]{"entity": "institucion", "value": "BIBLIOTECA UNIVERSITARIA"}?
+    - ¿Dónde está el [AULA DE IDIOMAS]{"entity": "institucion", "value": "AULA DE IDIOMAS"}?
+    - Quiero saber donde está el [AULA DE IDIOMAS]{"entity": "institucion", "value": "AULA DE IDIOMAS"}
+    - ¿Dónde está la [RESIDENCIA UNIVERSITARIA]{"entity": "institucion", "value": "RESIDENCIA UNIVERSITARIA"}?
+    - Localización de la [RESIDENCIA]{"entity": "institucion", "value": "RESIDENCIA UNIVERSITARIA"}
+- intent: informar
+  examples: |
+    - [servicio de información al estudiante]{"entity":"contacto","value":"SERVICIO DE INFORMACIÓN AL ESTUDIANTE"}
+    - [trabajadora social]{"entity":"contacto","value":"TRABAJADORA SOCIAL"}
+    - [registro general]{"entity":"contacto","value":"REGISTRO GENERAL"}
+    - [biblioteca]{"entity":"contacto","value":"BIBLIOTECA UNIVERSITARIA"}
+    - [aula de idiomas]{"entity":"contacto","value":"AULA DE IDIOMAS"}
+    - [servicio de deportes]{"entity":"contacto","value":"SERVICIO DE DEPORTES"}
+    - [sede institucional]{"entity":"contacto","value":"SEDE INSTITUCIONAL"}
+    - [servicio de informática]{"entity":"contacto","value":"SERVICIO DE INFORMÁTICA"}
+    - [profesor]{"entity":"contacto","value":"PROFESORADO"}
+    - [LENGUA ESPAÑOLA Y LITERATURAS HISPÁNICAS]{"entity": "nombre_carrera", "value": "LENGUA ESPAÑOLA Y LITERATURAS HISPÁNICAS"}
+    - [LENGUA ESPAÑOLA Y LITERATURAS HISPANICAS]{"entity": "nombre_carrera", "value": "LENGUA ESPAÑOLA Y LITERATURAS HISPÁNICAS"}
+    - [LENGUA ESPANOLA Y LITERATURAS HISPANICAS]{"entity": "nombre_carrera", "value": "LENGUA ESPAÑOLA Y LITERATURAS HISPÁNICAS"}
+    - [LENGUA ESPAÑOLA]{"entity": "nombre_carrera", "value": "LENGUA ESPAÑOLA Y LITERATURAS HISPÁNICAS"}
+    - [LENGUA ESPANOLA]{"entity": "nombre_carrera", "value": "LENGUA ESPAÑOLA Y LITERATURAS HISPÁNICAS"}
+    - [LENGUAS MODERNAS]{"entity": "nombre_carrera", "value": "LENGUAS MODERNAS"}
+    - [LENGUA MODERNA]{"entity": "nombre_carrera", "value": "LENGUAS MODERNAS"}
+    - [MODERNAS]{"entity": "nombre_carrera", "value": "LENGUAS MODERNAS"}
+    - [MODERNA]{"entity": "nombre_carrera", "value": "LENGUAS MODERNAS"}
+    - [HISTORIA](nombre_carrera)
+    - [TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-FRANCÉS]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-FRANCÉS"}
+    - [TRADUCCIÓN E INTERPRETACION: INGLES-FRANCES]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-FRANCÉS"}
+    - [INGLÉS-FRANCÉS]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-FRANCÉS"}
+    - [INGLES-FRANCES]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-FRANCÉS"}
+    - [TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-ALEMÁN]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-ALEMÁN"}
+    - [TRADUCCION E INTERPRETACION: INGLES-ALEMAN]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-ALEMÁN"}
+    - [INGLÉS-ALEMÁN]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-ALEMÁN"}
+    - [INGLES-ALEMAN]{"entity": "nombre_carrera", "value": "TRADUCCIÓN E INTERPRETACIÓN: INGLÉS-ALEMÁN"}
+    - [CIENCIAS DEL MAR]{"entity": "nombre_carrera", "value": "CIENCIAS DEL MAR"}
+    - [MAR]{"entity": "nombre_carrera", "value": "CIENCIAS DEL MAR"}
+    - [MEDICINA](nombre_carrera)
+    - [ENFERMERÍA]{"entity": "nombre_carrera", "value": "ENFERMERÍA"}
+    - [ENFERMERIA]{"entity": "nombre_carrera", "value": "ENFERMERÍA"}
+    - [FISIOTERAPIA](nombre_carrera)
+    - [VETERINARIA](nombre_carrera)
+    - [CIENCIAS DE LA ACTIVIDAD FÍSICA Y DEL DEPORTE}{"entity": "nombre_carrera", "value": "CIENCIAS DE LA ACTIVIDAD FÍSICA Y DEL DEPORTE"}
+    - [CIENCIAS DE LA ACTIVIDAD FISICA Y DEL DEPORTE}{"entity": "nombre_carrera", "value": "CIENCIAS DE LA ACTIVIDAD FÍSICA Y DEL DEPORTE"}
+    - [CIENCIAS DE LA ACTIVIDAD FÍSICA}{"entity": "nombre_carrera", "value": "CIENCIAS DE LA ACTIVIDAD FÍSICA Y DEL DEPORTE"}
+    - [CIENCIAS DEL DEPORTE}{"entity": "nombre_carrera", "value": "CIENCIAS DE LA ACTIVIDAD FÍSICA Y DEL DEPORTE"}
+    - [ADMINISTRACIÓN Y DIRECCIÓN DE EMPRESAS]{"entity": "nombre_carrera", "value": "ADMINISTRACIÓN Y DIRECCIÓN DE EMPRESAS"}
+    - [ADMINISTRACION Y DIRECCION DE EMPRESAS]{"entity": "nombre_carrera", "value": "ADMINISTRACIÓN Y DIRECCIÓN DE EMPRESAS"}
+    - [ADE]{"entity": "nombre_carrera", "value": "ADMINISTRACIÓN Y DIRECCIÓN DE EMPRESAS"}
+    - [ECONOMÍA]{"entity": "nombre_carrera", "value": "ECONOMÍA"}
+    - [ECONOMIA]{"entity": "nombre_carrera", "value": "ECONOMÍA"}
+    - [ECONOMICAS]{"entity": "nombre_carrera", "value": "ECONOMÍA"}
+    - [ECONOMICA]{"entity": "nombre_carrera", "value": "ECONOMÍA"}
+    - [TURISMO](nombre_carrera)
+    - [RELACIONES LABORALES Y RECURSOS HUMANOS]{"entity": "nombre_carrera", "value": "RELACIONES LABORALES Y RECURSOS HUMANOS"}
+    - [RELACIONES LABORALES]{"entity": "nombre_carrera", "value": "RELACIONES LABORALES Y RECURSOS HUMANOS"}
+    - [RECURSOS HUMANOS]{"entity": "nombre_carrera", "value": "RELACIONES LABORALES Y RECURSOS HUMANOS"}
+    - [DERECHO](nombre_carrera)
+    - [TRABAJO SOCIAL](nombre_carrera)
+    - [ARQUITECTURA](nombre_carrera)
+    - [GEOGRAFÍA Y ORDENACIÓN DEL TERRITORIO]{"entity": "nombre_carrera", "value": "GEOGRAFÍA Y ORDENACIÓN DEL TERRITORIO"}
+    - [GEOGRAFIA Y ORDENACION DEL TERRITORIO]{"entity": "nombre_carrera", "value": "GEOGRAFÍA Y ORDENACIÓN DEL TERRITORIO"}
+    - [GEOGRAFÍA]{"entity": "nombre_carrera", "value": "GEOGRAFÍA Y ORDENACIÓN DEL TERRITORIO"}
+    - [GEOGRAFIA]{"entity": "nombre_carrera", "value": "GEOGRAFÍA Y ORDENACIÓN DEL TERRITORIO"}
+    - [EDUCACIÓN SOCIAL]{"entity": "nombre_carrera", "value": "EDUCACIÓN SOCIAL"}
+    - [EDUCACION SOCIAL]{"entity": "nombre_carrera", "value": "EDUCACIÓN SOCIAL"}
+    - [EDUCACIÓN INFANTIL]{"entity": "nombre_carrera", "value": "EDUCACIÓN INFANTIL"}
+    - [EDUCACION INFANTIL]{"entity": "nombre_carrera", "value": "EDUCACIÓN INFANTIL"}
+    - [EDUCACIÓN PRIMARIA]{"entity": "nombre_carrera", "value": "EDUCACIÓN PRIMARIA"}
+    - [EDUCACION PRIMARIA]{"entity": "nombre_carrera", "value": "EDUCACIÓN PRIMARIA"}
+    - [INGENIERÍA CIVIL]{"entity": "nombre_carrera", "value": "INGENIERÍA CIVIL"}
+    - [INGENIERIA CIVIL]{"entity": "nombre_carrera", "value": "INGENIERÍA CIVIL"}
+    - [INGENIERÍA EN DISEÑO INDUSTRIAL Y DESARROLLO DE PRODUCTOS]{"entity": "nombre_carrera", "value": "INGENIERÍA EN DISEÑO INDUSTRIAL Y DESARROLLO DE PRODUCTOS"}
+    - [INGENIERIA EN DISEÑO INDUSTRIAL Y DESARROLLO DE PRODUCTOS]{"entity": "nombre_carrera", "value": "INGENIERÍA EN DISEÑO INDUSTRIAL Y DESARROLLO DE PRODUCTOS"}
+    - [DISEÑO INDUSTRIAL]{"entity": "nombre_carrera", "value": "INGENIERÍA EN DISEÑO INDUSTRIAL Y DESARROLLO DE PRODUCTOS"}
+    - [INGENIERÍA ELÉCTRICA]{"entity": "nombre_carrera", "value": "INGENIERÍA ELÉCTRICA"}
+    - [INGENIERIA ELECTRICA]{"entity": "nombre_carrera", "value": "INGENIERÍA ELÉCTRICA"}
+    - [INGENIERÍA ELECTRÓNICA INDUSTRIAL Y AUTOMÁTICA]{"entity": "nombre_carrera", "value": "INGENIERÍA ELECTRÓNICA INDUSTRIAL Y AUTOMÁTICA"}
+    - [INGENIERIA ELECTRONICA INDUSTRIAL Y AUTOMATICA]{"entity": "nombre_carrera", "value": "INGENIERÍA ELECTRÓNICA INDUSTRIAL Y AUTOMÁTICA"}
+    - [INGENIERIA ELECTRONICA]{"entity": "nombre_carrera", "value": "INGENIERÍA ELECTRÓNICA INDUSTRIAL Y AUTOMÁTICA"}
+    - [INGENIERÍA MECÁNICA]{"entity": "nombre_carrera", "value": "INGENIERÍA MECÁNICA"}
+    - [INGENIERIA MECANICA]{"entity": "nombre_carrera", "value": "INGENIERÍA MECÁNICA"}
+    - [MECANICA]{"entity": "nombre_carrera", "value": "INGENIERÍA MECÁNICA"}
+    - [INGENIERÍA EN ORGANIZACIÓN INDUSTRIAL]{"entity": "nombre_carrera", "value": "INGENIERÍA EN ORGANIZACIÓN INDUSTRIAL"}
+    - [INGENIERIA INDUSTRIAL]{"entity": "nombre_carrera", "value": "INGENIERÍA EN ORGANIZACIÓN INDUSTRIAL"}
+    - [INGENIERÍA QUÍMICA]{"entity": "nombre_carrera", "value": "INGENIERÍA QUÍMICA"}
+    - [INGENIERIA QUIMICA]{"entity": "nombre_carrera", "value": "INGENIERÍA QUÍMICA"}
+    - [INGENIERÍA QUÍMICA INDUSTRIAL]{"entity": "nombre_carrera", "value": "INGENIERÍA QUÍMICA INDUSTRIAL"}
+    - [INGENIERIA QUIMICA INDUSTRIAL]{"entity": "nombre_carrera", "value": "INGENIERÍA QUÍMICA INDUSTRIAL"}
+    - [QUÍMICA INDUSTRIAL]{"entity": "nombre_carrera", "value": "INGENIERÍA QUÍMICA INDUSTRIAL"}
+    - [INGENIERÍA EN TECNOLOGÍA NAVAL]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍA NAVAL"}
+    - [INGENIERIA NAVAL]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍA NAVAL"}
+    - [INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}
+    - [INGENIERIA EN TECNOLOGIAS DE LA TELECOMUNICACION]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}
+    - [TELECOMUNICACION]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}
+    - [TELECO]{"entity": "nombre_carrera", "value": "INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN"}
+    - [CIENCIA E INGENIERÍA DE DATOS]{"entity": "nombre_carrera", "value": "CIENCIA E INGENIERÍA DE DATOS"}
+    - [CIENCIA E INGENIERIA DE DATOS]{"entity": "nombre_carrera", "value": "CIENCIA E INGENIERÍA DE DATOS"}
+    - [INGENIERÍA DE DATOS]{"entity": "nombre_carrera", "value": "CIENCIA E INGENIERÍA DE DATOS"}
+    - [INGENIERÍA INFORMÁTICA]{"entity": "nombre_carrera", "value": "INGENIERÍA INFORMÁTICA"}
+    - [INFORMÁTICA]{"entity": "nombre_carrera", "value": "INGENIERÍA INFORMÁTICA"}
+    - [INFORMATICA]{"entity": "nombre_carrera", "value": "INGENIERÍA INFORMÁTICA"}
+    - [1er trimestre]{"entity": "trimestre", "value":"PRIMER SEMESTRE"}
+    - [1er semestre]{"entity": "trimestre", "value":"PRIMER SEMESTRE"}
+    - [primer trimestre]{"entity": "trimestre", "value":"PRIMER SEMESTRE"}
+    - [primer semestre]{"entity": "trimestre", "value":"PRIMER SEMESTRE"}
+    - [semestre primero]{"entity": "trimestre", "value":"PRIMER SEMESTRE"}
+    - [trimestre primero]{"entity": "trimestre", "value":"PRIMER SEMESTRE"}
+    - [2do trimestre]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"}
+    - [2do semestre]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"}
+    - [segundo trimestre]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"}
+    - [segundo semestre]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"}
+    - [semestre segundo]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"}
+    - [trimestre segundo]{"entity": "trimestre", "value":"SEGUNDO SEMESTRE"}
+    - [ordinaria](convocatoria)
+    - [extraordinaria](convocatoria)
+    - [especial](convocatoria)
+    - [navidad](vacaciones)
+    - [semana santa](vacaciones)
+    - [verano](vacaciones)
+    - [VACACIONES](evento)
+    - [CURSO](evento)
+    - [EVALUACIONES](evento)
+    - [CLASES](evento)
+- intent: saludo
+  examples: |
+    - hola
+    - buenas tardes
+    - buenos dias
+    - que hay
+    - hola, buenas tardes
+    - holi
+    - ola
+    - Que pasa
+    - buenas    
+- intent: despedida
+  examples: |
+    - buenas tardes
+    - adiós
+    - nos vemos
+    - adiós, buen día
+    - ten un buen día
+    - me despido
+    - buenas noches
+    - nos vemos despues
+- intent: affirm
+  examples: |
+    - si
+    - s
+    - por supuesto
+    - suena bien
+    - correcto
+- intent: deny
+  examples: |
+    - no
+    - n
+    - nunca
+    - Creo que no
+    - No me gusta
+    - Ni en bromas
+    - No realmente
+- intent: retar_bot
+  examples: |
+    - ¿eres un robot?
+    - ¿eres un humano?
+    - ¿hablo con un robot?
+    - ¿hablo con un humano?
+    - ¿Estoy hablando con una IA?
+    - ¿Eres una inteligencia artifical?
+    - ¿Eres una IA?
+- intent: out_of_scope
+  examples: |
+    - dime una broma
+    - quiero pizza
+    - dime el cuadrado de 5
+    - me gusta la pasta
+    - tengo una televisión que no funciona
+    - quiero helado
+    - quiero hablar
+    - estas bien?
+    - quiero palomitas
+    - tengo hambre
+    - que día es hoy
+    - me gustan los animales
+    - te gustan los animales
+    - quieres comida
+    - quiero un taxi
+    - hdakjhdaks 
+    - hjdalhdaus
+    - ririrgd
+    - cuales son las asignaturas de la rama de juridicas
+- intent: gracias
+  examples: |
+    - gracias adiós
+    - bien gracias
+    - okay, gracias
+    - gracias
+    - mmm gracias adios
+    - increible, eres un buen bot.
+    - Esta bien.
+    - Buen trabajo
+    - gracias por la ayuda.
+    - thanks
+    - gracias por la información
+- intent: human_handoff
+  examples: |
+    - tranferencia
+    - traspaso
+    - operador
+    - puedo hablar con un humano?
+    - quiero un humano.
+    - humano real?
+    - Puedo hablar con un humano?
+    - transferir a un humano
+    - por favor quiero hablar con un humano
+    - ¿puedo hablar con una persona real?
+    - conectame con una persona real, por favor
+    - necesito una persona real
+    - dejame hablar con una persona real
+    - me gustaría hablar con una persona real.
+  # telefono operador contacto oficina información
+- intent: query_entities
+  examples: |
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"}?
+    - Muestrame todas las [carreras]{"entity": "entity_type", "value": "degrees"} que existen.
+    - Listame las [carreras]{"entity": "entity_type", "value": "degrees"}
+    - Quiero una lista de los [grados]{"entity": "entity_type", "value": "degrees"} de ulpgc.
+    - Muestrame los [grados]{"entity": "entity_type", "value": "degrees"} de ulpgc.
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} existen?
+    - ¿Qué [grados]{"entity": "entity_type", "value": "degrees"} existen?
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} [presenciales]{"entity": "modalidad", "value": "presencial"}
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de modalidad [presecial]{"entity": "modalidad", "value": "presencial"}?
+    - Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} de modalidad [no presencial]{"entity": "modalidad", "value": "no presencial"}?
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de modalidad [no presencial]{"entity": "modalidad", "value": "no presencial"}?
+    - Muestrame los [grados]{"entity": "entity_type", "value": "degrees"} de modalidad [presecial]{"entity": "modalidad", "value": "presencial"}.
+    - Muestrame los [grados]{"entity": "entity_type", "value": "degrees"} de modalidad [no presecial]{"entity": "modalidad", "value": "no presencial"}.
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} [presenciales]{"entity": "modalidad", "value": "presencial"}?
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} [no presenciales]{"entity": "modalidad", "value": "no presencial"}?
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} de [ARTES Y HUMANIDADES]{"entity": "rama", "value": "ARTES Y HUMANIDADES"}
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} de [ARTES]{"entity": "rama", "value": "ARTES Y HUMANIDADES"}
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} de [HUMANIDADES]{"entity": "rama", "value": "ARTES Y HUMANIDADES"}
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} de [SALUD]{"entity": "rama", "value": "CIENCIAS DE LA SALUD"}
+    - Listame las [carreras]{"entity": "entity_type", "value": "degrees"} de [SOCIALES]{"entity": "rama", "value": "CIENCIAS SOCIALES Y JURÍDICAS"}
+    - Listame las [carreras]{"entity": "entity_type", "value": "degrees"} de [CIENCIAS]{"entity": "rama", "value": "CIENCIAS"}
+    - Listame las [carreras]{"entity": "entity_type", "value": "degrees"} de [CIENCIA]{"entity": "rama", "value": "CIENCIAS"}
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de la rama [CIENCIAS DE LA SALUD]{"entity": "rama", "value": "CIENCIAS DE LA SALUD"}?
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de la rama [SALUD]{"entity": "rama", "value": "CIENCIAS DE LA SALUD"}?
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de la rama [CIENCIAS SOCIALES Y JURÍDICAS]{"entity": "rama", "value": "CIENCIAS SOCIALES Y JURÍDICAS"}?
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de la rama [SOCIALES Y JURÍDICAS]{"entity": "rama", "value": "CIENCIAS SOCIALES Y JURÍDICAS"}?
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de la rama [SOCIALES]{"entity": "rama", "value": "CIENCIAS SOCIALES Y JURÍDICAS"}?
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de la rama [JURÍDICAS]{"entity": "rama", "value": "CIENCIAS SOCIALES Y JURÍDICAS"}?
+    - ¿Qué [carreras]{"entity": "entity_type", "value": "degrees"} son de la rama de [CIENCIAS]{"entity": "rama", "value": "CIENCIAS"}?
+    - Muestrame los [grados]{"entity": "entity_type", "value": "degrees"} de la rama [INGENIERÍAS Y ARQUITECTURA]{"entity": "rama", "value": "INGENIERÍAS Y ARQUITECTURA"}.
+    - Muestrame los [grados]{"entity": "entity_type", "value": "degrees"} de la rama de [INGENIERÍAS]{"entity": "rama", "value": "INGENIERÍAS Y ARQUITECTURA"}.
+    - Muestrame los [grados]{"entity": "entity_type", "value": "degrees"} de la [rama ARQUITECTURA]{"entity": "rama", "value": "INGENIERÍAS Y ARQUITECTURA"}.
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} de [INGENIERIAS]{"entity": "rama", "value": "INGENIERÍAS Y ARQUITECTURA"} que existen?
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} de [INGENIERIA]{"entity": "rama", "value": "INGENIERÍAS Y ARQUITECTURA"}?
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"}  de [SOCIALES Y JURIDICAS]{"entity": "rama", "value": "CIENCIAS SOCIALES Y JURÍDICAS"}?
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"}  de [JURIDICAS]{"entity": "rama", "value": "CIENCIAS SOCIALES Y JURÍDICAS"}?
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [5]{"entity":"nota_corte", "value":"5"}?
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [cinco]{"entity":"nota_corte", "value":"5"}?
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [6]{"entity":"nota_corte", "value":"6"}?
+    - ¿Cuales son las [carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [seis]{"entity":"nota_corte", "value":"6"}?
+    - Muestrame las [carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [7]{"entity":"nota_corte", "value":"7"}
+    - Muestrame [carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [siete]{"entity":"nota_corte", "value":"7"}
+    - ¿Que [carreras]{"entity": "entity_type", "value": "degrees"} tienen nota de corte [8]{"entity":"nota_corte", "value":"8"}?
+    - ¿Que [carreras]{"entity": "entity_type", "value": "degrees"} tienen nota de corte [ocho]{"entity":"nota_corte", "value":"8"}?
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} cuya nota de corte sea [9]{"entity":"nota_corte", "value":"9"}.
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} de nota [nueve]{"entity":"nota_corte", "value":"9"}
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} cuya nota de corte sea [10]{"entity":"nota_corte", "value":"10"}.
+    - Listame los [grados]{"entity": "entity_type", "value": "degrees"} de nota [diez]{"entity":"nota_corte", "value":"10"}
+    - [Carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [11]{"entity":"nota_corte", "value":"11"}
+    - [Carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [once]{"entity":"nota_corte", "value":"11"}
+    - [Grados]{"entity": "entity_type", "value": "degrees"} con nota de corte [12]{"entity":"nota_corte", "value":"12"}
+    - [Grados]{"entity": "entity_type", "value": "degrees"} con nota de corte [doce]{"entity":"nota_corte", "value":"12"}
+    - [Grados]{"entity": "entity_type", "value": "degrees"} con nota de corte [13]{"entity":"nota_corte", "value":"13"}
+    - [Grados]{"entity": "entity_type", "value": "degrees"} con nota de corte [trece]{"entity":"nota_corte", "value":"13"}
+    - [Carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [maxima]{"entity":"nota_corte", "value":"14"}
+    - [Carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [14]{"entity":"nota_corte", "value":"14"}
+    - [Carreras]{"entity": "entity_type", "value": "degrees"} con nota de corte [catorce]{"entity":"nota_corte", "value":"14"}
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} un [grado]{"entity":"concepto", "value":"grado"}?
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} una [carrera]{"entity":"concepto", "value":"grado"}?
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} un [doctorado](concepto)?
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} un [master]{"entity":"concepto", "value":"máster"}?
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} un [máster]{"entity":"concepto", "value":"máster"}?
+    - ¿Que [significa]{"entity": "entity_type", "value": "definitions"} [rector](concepto)?
+    - ¿Que [significa]{"entity": "entity_type", "value": "definitions"} [doctorado](concepto)?
+    - ¿Cual es el [significado]{"entity": "entity_type", "value": "definitions"} de [grado]{"entity":"concepto", "value":"grado"}?
+    - ¿Cual es el [significado]{"entity": "entity_type", "value": "definitions"} de [crédito]{"entity":"concepto", "value":"crédito"}?
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} un [credito]{"entity":"concepto", "value":"crédito"}?
+    - [define]{"entity": "entity_type", "value": "definitions"} [beca]{"entity":"concepto", "value":"beca"}
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} una [beca]{"entity":"concepto", "value":"beca"}?
+    - [define]{"entity": "entity_type", "value": "definitions"} [rector]{"entity":"concepto", "value":"rector"}
+    - [define]{"entity": "entity_type", "value": "definitions"} [convocatoria]{"entity":"concepto", "value":"convocatoria"}
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} una [convocatoria]{"entity":"concepto", "value":"convocatoria"} ordinaria?
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} una [convocatoria]{"entity":"concepto", "value":"convocatoria"} extraordinaria?
+    - ¿Cual es el [significado]{"entity": "entity_type", "value": "definitions"} de [convocatoria]{"entity":"concepto", "value":"convocatoria"}?
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} una [título propio]{"entity":"concepto", "value":"títulos propios"}?
+    - [define]{"entity": "entity_type", "value": "definitions"} [titulo propio]{"entity":"concepto", "value":"títulos propios"}
+    - ¿Cual es el [significado]{"entity": "entity_type", "value": "definitions"} de [posgrado]{"entity":"concepto", "value":"posgrado"}?
+    - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} un [posgrado]{"entity":"concepto", "value":"posgrado"}?
+    - [define]{"entity": "entity_type", "value": "definitions"} [postgrado]{"entity":"concepto", "value":"posgrado"}
+- intent: query_attribute
+  examples: |
+    - ¿Cual es la [nota de corte]{"entity":"attribute","value":"nota_corte"} de [INGENIERÍA INFORMÁTICA]{"entity": "carrera", "value": "INGENIERÍA INFORMÁTICA"}?
+    - ¿Cual es la [facultad]{"entity":"attribute","value":"facultad"} de [INGENIERIA INFORMATICA]{"entity": "carrera", "value": "INGENIERÍA INFORMÁTICA"}?
+- intent: obtener_definicion
+  examples: |
+    - ¿[grado]{"entity":"concepto", "value":"grado"}?
+    - [grado]{"entity":"concepto", "value":"grado"}
+    - ¿[doctorado](concepto)?
+    - [doctorado](concepto)
+    - [crédito]{"entity":"concepto", "value":"crédito"}?
+    - ¿[credito]{"entity":"concepto", "value":"crédito"}?
+    - [credit]{"entity":"concepto", "value":"crédito"}
+    - ¿[master]{"entity":"concepto", "value":"máster"}?
+    - [máster]{"entity":"concepto", "value":"máster"}?
+    - ¿[rector](concepto)?
+    - [beca]{"entity":"concepto", "value":"beca"}
+    - ¿[beca]{"entity":"concepto", "value":"beca"}?
+    - ¿[convocatoria](concepto)?
+    - [convocatoria](concepto)?
+    - [convocatoria](concepto)
+    - [título propio]{"entity":"concepto", "value":"títulos propios"}?
+    - [titulo propio]{"entity":"concepto", "value":"títulos propios"}
+    - ¿[postgrado]{"entity":"concepto", "value":"posgrado"}?
+    - [posgrado]{"entity":"concepto", "value":"posgrado"}?
+#SERVICIO DE AYUDA
+- intent: ayuda
+  examples: |
+    - me gustaría obtener ayuda
+    - aydua
+    - ayuda
+    - help
+    - gelp
+    - quiero ayuda
+    - ¿cuales son tus servicios?
+    - ¿que servicios ofreces?
+    - ¿Para que sirves?
+    - Cual es tu utilidad?
+    - ayuda, por favor.
+    - quiero ayuda
+    - me ayudas?
+    - en que puedes ayudarme?
+    - ¿Que servicios tienes?
+    - ¿cual es tu utilidad?
+    - utilidades?
+    - ¿que haces?
+    - alguien puede ayudarme?
+    - AYUDA
+    - no entiendo nada
+    - estoy confuso
+    - quiero algo de ayuda.
+    - Puedes ayduarme en algo?
+    - ayudame
+    - Que puedo preguntarte?
+    - Como uso esto?
+    - Puedes hacer algo más?
+    - Que puedes hacer?
+- intent: ayuda_localizaciones
+  examples: |
+    - ayuda localizaciones
+    - ayuda sobre el servicio de localizaciones importantes.
+- intent: ayuda_contactos
+  examples: |
+    - ayuda contactos
+    - ayuda sobre el servicio de contactos.
+- intent: ayuda_fechas
+  examples: |
+    - ayuda fechas
+    - ayuda sobre el servicio de fechas importantes.
+- intent: ayuda_conceptos
+  examples: |
+    - ayuda conceptos
+    - ayuda sobre los conceptos importantes.
+- intent: ayuda_extras
+  examples: |
+    - ayuda extras
+    - ayuda sobre los servicios extra.
+#SERVICIO INFORMATIVO DE MIULPGC
+- intent: ayuda_miulpgc
+  examples: |
+    - ayuda miulpgc
+    - quiero ayuda sobre miulpg
+    - no entiendo miulpgc
+- intent: mis_datos_info
+  examples: |
+    - información sobre menu mis datos
+    - quiero información sobre el menu mis datos
+- intent: mi_evaluacion_info
+  examples: |
+    - información sobre menu mi evaluación
+    - quiero información sobre el menu mi evaluación
+- intent: mi_campus_virtual_info
+  examples: |
+    - información sobre menu mi campus virtual
+    - quiero información sobre el menu mi campus virtual
+- intent: mis_utilidades_info
+  examples: |
+    - información sobre menu mis utilidades
+    - quiero información sobre el menu mis utilidades
+- intent: mi_matricula_info
+  examples: |
+    - información sobre menu mi matricula
+    - quiero información sobre el menu mi matricula
+    
+
+
+
+
+
+    
