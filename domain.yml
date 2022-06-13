@@ -1,38 +1,70 @@
 version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- obtener_fecha
-- saludo
-- despedida
-- affirm
-- deny
-- retar_bot
-- obtener_localizacion
-- informar
-- out_of_scope
-- gracias
-- human_handoff
-- handoff
-- trigger_handoff
-- handoff_to
-- query_entities
-- query_attribute
-- obtener_definicion
-- obtener_contacto
-- ayuda
-- ayuda_localizaciones
-- ayuda_conceptos
-- ayuda_fechas
-- ayuda_extras
-- ayuda_miulpgc
-- mis_datos_info
-- mi_evaluacion_info
-- mi_campus_virtual_info
-- mis_utilidades_info
-- mi_matricula_info
-- ayuda_contactos
+- obtener_fecha:
+    use_entities: true
+- saludo:
+    use_entities: true
+- despedida:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- retar_bot:
+    use_entities: true
+- obtener_localizacion:
+    use_entities: true
+- informar:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- gracias:
+    use_entities: true
+- human_handoff:
+    use_entities: true
+- handoff:
+    use_entities: true
+- trigger_handoff:
+    use_entities: true
+- handoff_to:
+    use_entities: true
+- query_entities:
+    use_entities: true
+- query_attribute:
+    use_entities: true
+- obtener_definicion:
+    use_entities: true
+- obtener_contacto:
+    use_entities: true
+- ayuda:
+    use_entities: true
+- ayuda_localizaciones:
+    use_entities: true
+- ayuda_conceptos:
+    use_entities: true
+- ayuda_fechas:
+    use_entities: true
+- ayuda_extras:
+    use_entities: true
+- ayuda_miulpgc:
+    use_entities: true
+- mis_datos_info:
+    use_entities: true
+- mi_evaluacion_info:
+    use_entities: true
+- mi_campus_virtual_info:
+    use_entities: true
+- mis_utilidades_info:
+    use_entities: true
+- mi_matricula_info:
+    use_entities: true
+- ayuda_contactos:
+    use_entities: true
 entities:
 - concepto
 - entity_type
@@ -47,85 +79,135 @@ entities:
 - convocatoria
 - vacaciones
 - contacto
+- carrera
+- attribute
 slots:
   evento:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   contacto:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   vacaciones:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   trimestre:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   convocatoria:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   nombre_carrera:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   institucion:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   repeated_validation_failures:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   AA_CONTINUE_FORM:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   zz_confirm_form:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   previous_form_name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   handoff_to:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   entity_type:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   modalidad:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   rama:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   facultad:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   grado:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   nota_corte:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   listed_items:
-    type: list
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   concepto:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   definicion:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   rango:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   requested_slot:
-    type: any
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   next_form_name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
 responses:
   utter_saludo:
   - text: Hola, soy CHULPGC tu chatbot universitario.
   utter_animar:
-  - text: 'Aquí hay algo que puede animarte:'
-    image: https://i.imgur.com/nGF1K8f.jpg
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Aquí hay algo que puede animarte:'
   utter_buen_humor:
   - text: Perfecto, me alegro
   utter_despedida:
@@ -138,70 +220,66 @@ responses:
   - text: |
       "Para encontrar tu facultad, necesito saber cual es tú carrera. Ej: Ingenería Informática, Arquitectura, Telecomunicaciones..."
   utter_ask_formulario_obtener_fecha_trimestre:
-  - text: |
+  - buttons:
+    - payload: PRIMER SEMESTRE
+      title: Primer Semestre
+    - payload: SEGUNDO SEMESTRE
+      title: Segundo Semestre
+    text: |
       "El periodo de clases y la convocatoria ordinaria están divididos en dos trimestres. Elige el trimestre del que quieras obtener la fecha.
-    buttons:
-    - title: Primer Semestre
-      payload: PRIMER SEMESTRE
-    - title: Segundo Semestre
-      payload: SEGUNDO SEMESTRE
   utter_ask_formulario_obtener_fecha_convocatoria:
-  - text: |
-      "El periodo de examenes tiene tres convocatorias. Elige la convocatoria de la que necesites detalles.
-    buttons:
-    - title: Convocatoria Ordinaria
-      payload: ordinaria
-    - title: Convocatoria Extraordinaria
-      payload: extraordinaria
-    - title: Convocatoria Especial
-      payload: especial
+  - buttons:
+    - payload: ordinaria
+      title: Convocatoria Ordinaria
+    - payload: extraordinaria
+      title: Convocatoria Extraordinaria
+    - payload: especial
+      title: Convocatoria Especial
+    text: El periodo de examenes tiene tres convocatorias. Elige la convocatoria de la que necesites detalles.
   utter_ask_formulario_obtener_fecha_evento:
-  - text: |
-      "Necesito saber a que evento te refieres. Los eventos son: curso, clases, vacaciones y examenes"
-    buttons:
-    - title: Clases
-      payload: CLASES
-    - title: Curso
-      payload: CURSO
-    - title: Examenes
-      payload: EVALUACIONES
-    - title: Vacaciones
-      payload: VACACIONES
-
+  - buttons:
+    - payload: CLASES
+      title: Clases
+    - payload: CURSO
+      title: Curso
+    - payload: EVALUACIONES
+      title: Examenes
+    - payload: VACACIONES
+      title: Vacaciones
+    text: 'Necesito saber a que evento te refieres. Los eventos son: curso, clases, vacaciones y examenes.'
   utter_ask_formulario_obtener_fecha_vacaciones:
-  - text: |
-      "Necesito saber a qué epoca de vacación te refieres"
-    buttons:
-    - title: Verano
-      payload: verano
-    - title: Semana Santa
-      payload: semana santa
-    - title: Navidad
-      payload: navidad
+  - buttons:
+    - payload: verano
+      title: Verano
+    - payload: semana santa
+      title: Semana Santa
+    - payload: navidad
+      title: Navidad
+    text: Necesito saber a qué epoca de vacación te refieres
   utter_ask_formulario_obtener_localizacion_AA_CONTINUE_FORM:
-  - text: |
+  - buttons:
+    - payload: /affirm
+      title: Si
+    - payload: /deny
+      title: No, quiero cancelar.
+    text: |
       ¿Te gustaría continuar con el proceso de búsqueda de localizaciones en la ULPGC?
-    buttons:
-    - title: Si
-      payload: /affirm
-    - title: No, quiero cancelar.
-      payload: /deny
   utter_ask_formulario_obtener_fecha_AA_CONTINUE_FORM:
-  - text: |
+  - buttons:
+    - payload: /affirm
+      title: Si
+    - payload: /deny
+      title: No.
+    text: |
       ¿Te gustaría continuar con el proceso de búsqueda de fechas importantes de la ULPGC?
-    buttons:
-    - title: Si
-      payload: /affirm
-    - title: No.
-      payload: /deny
   utter_ask_formulario_obtener_contacto_AA_CONTINUE_FORM:
-  - text: |
+  - buttons:
+    - payload: /affirm
+      title: Si
+    - payload: /deny
+      title: No.
+    text: |
       ¿Te gustaría continuar con el proceso de búsqueda de contactos importantes de la ULPGC?
-    buttons:
-    - title: Si
-      payload: /affirm
-    - title: No.
-      payload: /deny
   utter_formulario_obtener_localizacion_cancelado:
   - text: Búsqueda de localización cancelada por falta de información.
   utter_no_nombre_carrera:
@@ -258,167 +336,159 @@ responses:
   - text: La vacaciones de {n_vac} tienen como inicio {fecha_ini_obt} y como final {fecha_fin_obt}. La duración de las vacaciones de {n_vac} es de {duracion} días.
   utter_formulario_obtener_fecha_cancelado:
   - text: Busqueda de las fechas cancelada por falta de información.
-#SERVICIO DE AYUDA
   utter_esto_ayuda:
   - text: ¿Esto te ayuda?
   utter_ayuda:
-  - text: |-
-      Puedo ayudarte resolviendo los siguientes problemas:
-    buttons:
-    - title: Buscar localizaciones de la ULPGC.
-      payload: /ayuda_localizaciones
-    - title: Obtener fechas importantes del curso.
-      payload: /ayuda_fechas
-    - title: Contactar con entidades importantes.
-      payload: /ayuda_contactos
-    - title: Resolver conceptos básicos importantes.
-      payload: /ayuda_conceptos
-    - title: Resolver dudas sobre el Sistema MiULPGC.
-      payload: /ayuda_miulpgc
-    - title: Funcionalidades extras
-      payload: /ayuda_extras
+  - buttons:
+    - payload: /ayuda_localizaciones
+      title: Buscar localizaciones de la ULPGC.
+    - payload: /ayuda_fechas
+      title: Obtener fechas importantes del curso.
+    - payload: /ayuda_contactos
+      title: Contactar con entidades importantes.
+    - payload: /ayuda_conceptos
+      title: Resolver conceptos básicos importantes.
+    - payload: /ayuda_miulpgc
+      title: Resolver dudas sobre el Sistema MiULPGC.
+    - payload: /ayuda_extras
+      title: Funcionalidades extras
+    text: 'Puedo ayudarte resolviendo los siguientes problemas:'
   utter_ayuda_localizaciones:
-  - text: 
-      El servicio de localizaciones te permite obtener la localización de todas las carreras presenciales de la ULPGC. Y además otras instituciones de importancia como la biblioteca, el servicio de información al estudiante...
-      Prueba a escribir '¿Dónde está mi facultad?'.
+  - text: El servicio de localizaciones te permite obtener la localización de todas las carreras presenciales de la ULPGC. Y además otras instituciones de importancia como la biblioteca, el servicio de información al estudiante... Prueba a escribir '¿Dónde está mi facultad?'.
   utter_ayuda_fechas:
-  - text: 
-      El servicio de fechas importantes te permite obtener las fechas y duración de los eventos importantes del curso. Los eventos importantes son 'curso académico', 'periodo de clases', 'periodo de exámenes' y 'vacaciones'.
-      Prueba a escribir '¿Cuándo empiezan los exámenes?'.
+  - text: El servicio de fechas importantes te permite obtener las fechas y duración de los eventos importantes del curso. Los eventos importantes son 'curso académico', 'periodo de clases', 'periodo de exámenes' y 'vacaciones'. Prueba a escribir '¿Cuándo empiezan los exámenes?'.
   utter_ayuda_conceptos:
-  - text: 
-      El servicio de conceptos importantes te permite obtener las definiciones de algunos conceptos. Por ejemplo 'convocatoria', 'grado', 'doctorado', 'beca'...
-      Prueba a escribir 'Define beca'.
+  - text: El servicio de conceptos importantes te permite obtener las definiciones de algunos conceptos. Por ejemplo 'convocatoria', 'grado', 'doctorado', 'beca'... Prueba a escribir 'Define beca'.
   utter_ayuda_extras:
-  - text:
-      A parte de los demás servicios el chatbot es capaz de responder preguntas sencillas acerca los grados de la ULPGC. Preguntas relacionadas con las carreras existentes, las modalidades (presencial o no), ramas de estudio o notas de corte.
-      Prueba a escribir '¿Cuántas carreas tiene la ULPGC?', '¿Cuales son las carreras de modalidad presencial?',¿Cuales son las carreras de la rama de salud? o  '¿Cuales son las carreras con nota de corte 5?'.
+  - text: A parte de los demás servicios el chatbot es capaz de responder preguntas sencillas acerca los grados de la ULPGC. Preguntas relacionadas con las carreras existentes, las modalidades (presencial o no), ramas de estudio o notas de corte. Prueba a escribir '¿Cuántas carreas tiene la ULPGC?', '¿Cuales son las carreras de modalidad presencial?',¿Cuales son las carreras de la rama de salud? o  '¿Cuales son las carreras con nota de corte 5?'.
   utter_ayuda_contactos:
-  - text:
-      El servicio de búsqueda de contactos te permite obtener contactos sobre entidades importantes de la ULPGC. Prueba a escribir ‘contactar con el aula de idiomas’.
+  - text: El servicio de búsqueda de contactos te permite obtener contactos sobre entidades importantes de la ULPGC. Prueba a escribir ‘contactar con el aula de idiomas’.
   utter_ayuda_miulpgc:
-  - text:
-      Este sistema tiene como objetivo ayudar al estudiante a comprender la interfaz de MiULPGC. Explicaremos de forma genérica cual es la utilidad de los diferentes menús.
-    buttons:
-    - title: Mis datos
-      payload: /mis_datos_info
-    - title: Mi evaluación
-      payload: /mi_evaluacion_info
-    - title: Mi campus Virtual
-      payload: /mi_campus_virtual_info
-    - title: Mis utilidades
-      payload: /mis_utilidades_info
-    - title: Mi Matricula
-      payload: /mi_matricula_info
-    - title: Volver
-      payload: /ayuda
+  - buttons:
+    - payload: /mis_datos_info
+      title: Mis datos
+    - payload: /mi_evaluacion_info
+      title: Mi evaluación
+    - payload: /mi_campus_virtual_info
+      title: Mi campus Virtual
+    - payload: /mis_utilidades_info
+      title: Mis utilidades
+    - payload: /mi_matricula_info
+      title: Mi Matricula
+    - payload: /ayuda
+      title: Volver
+    text: Este sistema tiene como objetivo ayudar al estudiante a comprender la interfaz de MiULPGC. Explicaremos de forma genérica cual es la utilidad de los diferentes menús.
   utter_mis_datos_info:
-  - text: "En este menú podemos ver y modificar nuestros datos relacionados con nuestras credenciales en la ULPGC. Podemos ver mi contraseña, mis datos y mi perfil.\n
-      Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)"
-    buttons:
-    - title: Mis datos
-      payload: /mis_datos_info
-    - title: Mi evaluación
-      payload: /mi_evaluacion_info
-    - title: Mi campus Virtual
-      payload: /mi_campus_virtual_info
-    - title: Mis utilidades
-      payload: /mis_utilidades_info
-    - title: Mi Matricula
-      payload: /mi_matricula_info
-    - title: Volver
-      payload: /ayuda
+  - buttons:
+    - payload: /mis_datos_info
+      title: Mis datos
+    - payload: /mi_evaluacion_info
+      title: Mi evaluación
+    - payload: /mi_campus_virtual_info
+      title: Mi campus Virtual
+    - payload: /mis_utilidades_info
+      title: Mis utilidades
+    - payload: /mi_matricula_info
+      title: Mi Matricula
+    - payload: /ayuda
+      title: Volver
+    text: |-
+      En este menú podemos ver y modificar nuestros datos relacionados con nuestras credenciales en la ULPGC. Podemos ver mi contraseña, mis datos y mi perfil.
+       Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)
   utter_mi_evaluacion_info:
-  - text: "En este menú podemos realizar las encuestas que se realizan al docente al final de los semestres de cada año. Además, podremos ver los resultados finales.\n
-      Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)"
-    buttons:
-    - title: Mis datos
-      payload: /mis_datos_info
-    - title: Mi evaluación
-      payload: /mi_evaluacion_info
-    - title: Mi campus Virtual
-      payload: /mi_campus_virtual_info
-    - title: Mis utilidades
-      payload: /mis_utilidades_info
-    - title: Mi Matricula
-      payload: /mi_matricula_info
-    - title: Volver
-      payload: /ayuda
+  - buttons:
+    - payload: /mis_datos_info
+      title: Mis datos
+    - payload: /mi_evaluacion_info
+      title: Mi evaluación
+    - payload: /mi_campus_virtual_info
+      title: Mi campus Virtual
+    - payload: /mis_utilidades_info
+      title: Mis utilidades
+    - payload: /mi_matricula_info
+      title: Mi Matricula
+    - payload: /ayuda
+      title: Volver
+    text: |-
+      En este menú podemos realizar las encuestas que se realizan al docente al final de los semestres de cada año. Además, podremos ver los resultados finales.
+       Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)
   utter_mi_campus_virtual_info:
-  - text: "En este menú podemos acceder al campus virtual de tu carrera.\n
-      Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)"
-    buttons:
-    - title: Mis datos
-      payload: /mis_datos_info
-    - title: Mi evaluación
-      payload: /mi_evaluacion_info
-    - title: Mi campus Virtual
-      payload: /mi_campus_virtual_info
-    - title: Mis utilidades
-      payload: /mis_utilidades_info
-    - title: Mi Matricula
-      payload: /mi_matricula_info
-    - title: Volver
-      payload: /ayuda
+  - buttons:
+    - payload: /mis_datos_info
+      title: Mis datos
+    - payload: /mi_evaluacion_info
+      title: Mi evaluación
+    - payload: /mi_campus_virtual_info
+      title: Mi campus Virtual
+    - payload: /mis_utilidades_info
+      title: Mis utilidades
+    - payload: /mi_matricula_info
+      title: Mi Matricula
+    - payload: /ayuda
+      title: Volver
+    text: |-
+      En este menú podemos acceder al campus virtual de tu carrera.
+       Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)
   utter_mis_utilidades_info:
-  - text: "En este menú tenemos varios submenús de interés \n
-      1.Mi movilidad => Para acceder a tramites de ERASMUS.\n
-      2.Mi software  => Aquí encontraras el software gratuito que la ULPGC ofrece a sus estudiantes.\n
-      3.Mi Aula      => Aquí podrás acceder a un servicio donde poder ejecutar localmente aplicaciones sin necesidad de instalarlas.\n
-      4.Listas de correo ULPGC => Aquí podrás ver a las listas de correo electrónico a las que tu correo institucional está asociado.\n
-      \n Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)"
-    buttons:
-    - title: Mis datos
-      payload: /mis_datos_info
-    - title: Mi evaluación
-      payload: /mi_evaluacion_info
-    - title: Mi campus Virtual
-      payload: /mi_campus_virtual_info
-    - title: Mis utilidades
-      payload: /mis_utilidades_info
-    - title: Mi Matricula
-      payload: /mi_matricula_info
-    - title: Volver
-      payload: /ayuda
+  - buttons:
+    - payload: /mis_datos_info
+      title: Mis datos
+    - payload: /mi_evaluacion_info
+      title: Mi evaluación
+    - payload: /mi_campus_virtual_info
+      title: Mi campus Virtual
+    - payload: /mis_utilidades_info
+      title: Mis utilidades
+    - payload: /mi_matricula_info
+      title: Mi Matricula
+    - payload: /ayuda
+      title: Volver
+    text: |-
+      En este menú tenemos varios submenús de interés 
+       1.Mi movilidad => Para acceder a tramites de ERASMUS.
+       2.Mi software  => Aquí encontraras el software gratuito que la ULPGC ofrece a sus estudiantes.
+       3.Mi Aula      => Aquí podrás acceder a un servicio donde poder ejecutar localmente aplicaciones sin necesidad de instalarlas.
+       4.Listas de correo ULPGC => Aquí podrás ver a las listas de correo electrónico a las que tu correo institucional está asociado.
+       
+       Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)
   utter_mi_matricula_info:
-  - text: "En este menú tenemos los submenús de mayor interés para el estudiante. Aquí podrá matricularse para un nuevo año y ver información referente a las asignaturas, profesores y expediente de su carrera.
-          \n Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)"
-    buttons:
-    - title: Mis datos
-      payload: /mis_datos_info
-    - title: Mi evaluación
-      payload: /mi_evaluacion_info
-    - title: Mi campus Virtual
-      payload: /mi_campus_virtual_info
-    - title: Mis utilidades
-      payload: /mis_utilidades_info
-    - title: Mi Matricula
-      payload: /mi_matricula_info
-    - title: Volver
-      payload: /ayuda
-#SERVICIO DE OBTENCION DE CONTACTOS
+  - buttons:
+    - payload: /mis_datos_info
+      title: Mis datos
+    - payload: /mi_evaluacion_info
+      title: Mi evaluación
+    - payload: /mi_campus_virtual_info
+      title: Mi campus Virtual
+    - payload: /mis_utilidades_info
+      title: Mis utilidades
+    - payload: /mi_matricula_info
+      title: Mi Matricula
+    - payload: /ayuda
+      title: Volver
+    text: |-
+      En este menú tenemos los submenús de mayor interés para el estudiante. Aquí podrá matricularse para un nuevo año y ver información referente a las asignaturas, profesores y expediente de su carrera. 
+       Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)
   utter_ask_formulario_obtener_contacto_contacto:
-  - text: |
-      "Necesito saber sobre que contacto en concreto necesitas información"
-    buttons:
-    - title: Servicio de Información al Estudiante
-      payload: servicio de información al estudiante
-    - title: Aula de Idiomas
-      payload: aula de idiomas
-    - title: Servicio de Deportes
-      payload: servicio de deportes
-    - title: Profesorado
-      payload: profesor
-    - title: Biblioteca
-      payload: biblioteca
-    - title: Trabajadora Social
-      payload: trabajadora social
-    - title: Registro General
-      payload: registro general
-    - title: Sede Institucional
-      payload: sede institucional
-    - title: Servicio de Informática
-      payload: servicio de informática
+  - buttons:
+    - payload: servicio de información al estudiante
+      title: Servicio de Información al Estudiante
+    - payload: aula de idiomas
+      title: Aula de Idiomas
+    - payload: servicio de deportes
+      title: Servicio de Deportes
+    - payload: profesor
+      title: Profesorado
+    - payload: biblioteca
+      title: Biblioteca
+    - payload: trabajadora social
+      title: Trabajadora Social
+    - payload: registro general
+      title: Registro General
+    - payload: sede institucional
+      title: Sede Institucional
+    - payload: servicio de informática
+      title: Servicio de Informática
+    text: Necesito saber sobre que contacto en concreto necesitas información.
   utter_no_contacto:
   - text: |
       Perdón, no reconocemos el contacto con el que quieres contactar. Te recordamos que los contactos disponibles son el Servicio Información al Estudiante, aula de Idiomas, Bibliotecas, Profesorado entre otros.
@@ -426,11 +496,11 @@ responses:
   - text: |
       Busqueda de contactos cancelada por falta de información.
   utter_mostrar_contactos:
-  - text: 
-      "Los métodos de contacto para el contacto {n_contacto} son:\n
-      - Teléfono: [Teléfono {n_contacto}](tel:{tel})\n
-      - Correo: [Correo {n_contacto}](mailto:{email})\n
-      - Web: [Web {n_contacto}]({web})"
+  - text: |-
+      Los métodos de contacto para el contacto {n_contacto} son:
+       - Teléfono: [Teléfono {n_contacto}](tel:{tel})
+       - Correo: [Correo {n_contacto}](mailto:{email})
+       - Web: [Web {n_contacto}]({web})
 actions:
 - action_ask_formulario_obtener_localizacion_zz_confirm_form
 - action_ask_formulario_obtener_fecha_zz_confirm_form
@@ -523,3 +593,4 @@ forms:
         - informar
         - formulario_obtener_contacto
         type: from_text
+e2e_actions: []
