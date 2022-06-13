@@ -66,6 +66,10 @@ nlu:
     - ¿Puedo contactar con mis [profesores]{"entity": "contacto", "value": "PROFESORADO"}?
     - Necesito el contacto de mi [profesor]{"entity": "contacto", "value": "PROFESORADO"}.
     - Quiero el correo de mi [profesor]{"entity": "contacto", "value": "PROFESORADO"}.
+    - OBTENER CONTACTO
+    - CONTACTAR CON MI [PROFESOR]{"entity": "contacto", "value": "PROFESORADO"}
+    - Quiero contactar con mi [profesor]{"entity": "contacto", "value": "PROFESORADO"}
+    - Contactar con el [aula de idiomas]{"entity": "contacto", "value": "AULA DE IDIOMAS"}
 - intent: obtener_fecha
   examples: |
     - ¿cuando [empieza]{"entity": "rango", "value": "inicio"} el [curso](evento)?
@@ -131,6 +135,8 @@ nlu:
     - ¿cuando [acaba]{"entity": "rango", "value": "fin"} el [verano](vacaciones)?
     - ¿cuando [finaliza]{"entity": "rango", "value": "fin"} las [vacaciones]{"entity": "evento", "value": "VACACIONES"} de [semana santa](vacaciones)?
     - ¿cuando [concluye]{"entity": "rango", "value": "fin"} las [vacaciones]{"entity": "evento", "value": "VACACIONES"} de [verano](vacaciones)?
+    - Cuanto duran los [examenes]{"entity": "evento", "value": "EVALUACIONES"}?
+    - ¿Cuándo [empiezan]{"entity": "rango", "value": "inicio"} los [exámenes]{"entity": "evento", "value": "EVALUACIONES"}?
 - intent: obtener_localizacion
   examples: |
     - ¿Dónde está la facultad de [INGENIERÍA INFORMÁTICA](nombre_carrera)?
@@ -175,6 +181,7 @@ nlu:
     - Quiero saber donde está el [AULA DE IDIOMAS](institucion)
     - ¿Dónde está la [RESIDENCIA UNIVERSITARIA](institucion)?
     - Localización de la [RESIDENCIA]{"entity": "institucion", "value": "RESIDENCIA UNIVERSITARIA"}
+    - ¿Donde está mi facultad?
 - intent: informar
   examples: |
     - [servicio de información al estudiante]{"entity": "contacto", "value": "SERVICIO DE INFORMACI\u00d3N AL ESTUDIANTE"}
@@ -293,6 +300,12 @@ nlu:
     - [CURSO](evento)
     - [EVALUACIONES](evento)
     - [CLASES](evento)
+    - [PRIMER SEMESTRE](trimestre)
+    - [Fin](rango) del [primer semestre]{"entity": "trimestre", "value": "PRIMER SEMESTRE"}
+    - [Filología](nombre_carrera)
+    - [Educación](nombre_carrera)
+    - [Lenguas Modernas](nombre_carrera)
+    - [Humanidades]{"entity": "rama", "value": "ARTES Y HUMANIDADES"}
 - intent: saludo
   examples: |
     - hola
@@ -304,6 +317,8 @@ nlu:
     - ola
     - Que pasa
     - buenas
+    - HOLA
+    - Hola
 - intent: despedida
   examples: |
     - buenas tardes
@@ -321,6 +336,7 @@ nlu:
     - por supuesto
     - suena bien
     - correcto
+    - Si
 - intent: deny
   examples: |
     - no
@@ -360,6 +376,8 @@ nlu:
     - hjdalhdaus
     - ririrgd
     - cuales son las asignaturas de la rama de juridicas
+    - Guapo
+    - ESTOY TRISTRE
 - intent: gracias
   examples: |
     - gracias adiós
@@ -373,6 +391,9 @@ nlu:
     - gracias por la ayuda.
     - thanks
     - gracias por la información
+    - Okey gracuas
+    - Gracias Abiam guapeton
+    - Gracias
 - intent: human_handoff
   examples: |
     - tranferencia
@@ -470,6 +491,9 @@ nlu:
     - ¿Cual es el [significado]{"entity": "entity_type", "value": "definitions"} de [posgrado](concepto)?
     - ¿[Qué es]{"entity": "entity_type", "value": "definitions"} un [posgrado](concepto)?
     - [define]{"entity": "entity_type", "value": "definitions"} [postgrado]{"entity": "concepto", "value": "posgrado"}
+    - cUALES SON LAS [CARRERAS]{"entity": "entity_type", "value": "degrees"} DE [SALUD]{"entity": "rama", "value": "CIENCIAS DE LA SALUD"}?
+    - CUALES SON LAS [CARRERAS]{"entity": "entity_type", "value": "degrees"} DE LA ULPGC?
+    - ¿CUANTAS [CARRERAS]{"entity": "entity_type", "value": "degrees"} TIENE LA ULPGC?
 - intent: query_attribute
   examples: |
     - ¿Cual es la [nota de corte]{"entity": "attribute", "value": "nota_corte"} de [INGENIERÍA INFORMÁTICA](carrera)?
@@ -525,6 +549,8 @@ nlu:
     - Como uso esto?
     - Puedes hacer algo más?
     - Que puedes hacer?
+    - Ayuda
+    - Necesito ayuda
 - intent: ayuda_localizaciones
   examples: |
     - ayuda localizaciones
