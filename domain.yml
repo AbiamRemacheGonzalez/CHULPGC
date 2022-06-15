@@ -275,8 +275,7 @@ responses:
       title: Si
     - payload: /deny
       title: No.
-    text: |
-      ¿Te gustaría continuar con el proceso de búsqueda de contactos importantes de la ULPGC?
+    text: ¿Te gustaría continuar con el proceso de búsqueda de contactos de la ULPGC?
   utter_formulario_obtener_localizacion_cancelado:
   - text: Búsqueda de localización cancelada por falta de información.
   utter_no_nombre_carrera:
