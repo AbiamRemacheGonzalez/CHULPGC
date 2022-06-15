@@ -175,6 +175,8 @@ nlu:
     - Quiero saber donde está el [AULA DE IDIOMAS](institucion)
     - ¿Dónde está la [RESIDENCIA UNIVERSITARIA](institucion)?
     - Localización de la [RESIDENCIA]{"entity": "institucion", "value": "RESIDENCIA UNIVERSITARIA"}
+    - Facultad de [Informática]{"entity": "nombre_carrera", "value": "INGENIER\u00cdA INFORM\u00c1TICA"}
+    - ¿Dónde está mi facultad?
 - intent: informar
   examples: |
     - [servicio de información al estudiante]{"entity": "contacto", "value": "SERVICIO DE INFORMACI\u00d3N AL ESTUDIANTE"}
@@ -304,6 +306,7 @@ nlu:
     - ola
     - Que pasa
     - buenas
+    - Hola
 - intent: despedida
   examples: |
     - buenas tardes
@@ -360,6 +363,7 @@ nlu:
     - hjdalhdaus
     - ririrgd
     - cuales son las asignaturas de la rama de juridicas
+    - ¿D
 - intent: gracias
   examples: |
     - gracias adiós
@@ -373,6 +377,7 @@ nlu:
     - gracias por la ayuda.
     - thanks
     - gracias por la información
+    - Gracias
 - intent: human_handoff
   examples: |
     - tranferencia
@@ -525,6 +530,7 @@ nlu:
     - Como uso esto?
     - Puedes hacer algo más?
     - Que puedes hacer?
+    - ayida
 - intent: ayuda_localizaciones
   examples: |
     - ayuda localizaciones
