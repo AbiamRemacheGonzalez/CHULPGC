@@ -7,7 +7,6 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_default
-  - action: utter_ayuda
   
 - rule: thankyou
   steps:
@@ -40,7 +39,6 @@ rules:
   steps:
   - intent: retar_bot
   - action: utter_retar_bot
-  - action: utter_ayuda
 
 - rule: Cuando se haga una petición resolver
   steps:
@@ -48,7 +46,6 @@ rules:
     - intent: query_entities
     - intent: obtener_definicion
   - action: action_query_entities
-  - action: utter_ayuda
 
 #SERVICIO DE BUSQUEDA DE LOCALIZACIONES
 - rule: activar buscar_localizacion mientra no haya otro formulario activo
@@ -71,7 +68,6 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_formulario_obtener_localizacion
-  - action: utter_ayuda
 #SERVICIO DE BUSQUEDA DE FECHAS
 - rule: activar obtener_fecha mientra no haya otro formulario activo
   condition:
@@ -92,7 +88,6 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_formulario_obtener_fecha
-  - action: utter_ayuda
 
 #SERVICIO DE BUSQUEDA DE CONTACTOS
 - rule: activar obtener_contacto mientra no haya otro formulario activo
@@ -114,7 +109,6 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_formulario_obtener_contacto
-  - action: utter_ayuda
 
 #SERVICIO DE AYUDA
 
