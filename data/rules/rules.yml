@@ -2,7 +2,12 @@ version: "2.0"
 
 rules:
 
-#
+#Añadido nuevo
+- rule: Pedir al usuario que reformule cuando envíe un mensaje con baja confianza NLU.
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+  
 - rule: thankyou
   steps:
   - intent: gracias
