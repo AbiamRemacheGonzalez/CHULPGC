@@ -129,7 +129,7 @@ responses:
   - text: 'Aquí hay algo que puede animarte:'
     image: https://i.imgur.com/nGF1K8f.jpg
   utter_buen_humor:
-  - text: Perfecto, me alegro
+  - text: Perfecto, me alegro.
   utter_despedida:
   - text: Adios
   utter_retar_bot:
@@ -138,10 +138,10 @@ responses:
   - text: 👍
   utter_ask_formulario_obtener_localizacion_nombre_carrera:
   - text: |
-      "Para encontrar tu facultad, necesito saber cual es tú carrera. Ej: Ingenería Informática, Arquitectura, Telecomunicaciones..."
+      Para encontrar tu facultad, necesito saber cual es tú carrera. Ej: Ingenería Informática, Arquitectura, Lenguas Modernas...
   utter_ask_formulario_obtener_fecha_trimestre:
   - text: |
-      "El periodo de clases y la convocatoria ordinaria están divididos en dos trimestres. Elige el trimestre del que quieras obtener la fecha.
+      El periodo de clases y la convocatoria ordinaria están divididos en dos trimestres. Elige el trimestre del que quieras obtener la fecha.
     buttons:
     - title: Primer Semestre
       payload: PRIMER SEMESTRE
@@ -149,7 +149,7 @@ responses:
       payload: SEGUNDO SEMESTRE
   utter_ask_formulario_obtener_fecha_convocatoria:
   - text: |
-      "El periodo de examenes tiene tres convocatorias. Elige la convocatoria de la que necesites detalles.
+      El periodo de examenes tiene tres convocatorias. Elige la convocatoria de la que necesites detalles.
     buttons:
     - title: Convocatoria Ordinaria
       payload: ordinaria
@@ -159,7 +159,7 @@ responses:
       payload: especial
   utter_ask_formulario_obtener_fecha_evento:
   - text: |
-      "Necesito saber a que evento te refieres. Los eventos son: curso, clases, vacaciones y examenes"
+      Necesito saber a que evento del calendario te refieres. Elige el evento del necesites más detalles.
     buttons:
     - title: Clases
       payload: CLASES
@@ -172,7 +172,7 @@ responses:
 
   utter_ask_formulario_obtener_fecha_vacaciones:
   - text: |
-      "Necesito saber a qué epoca de vacación te refieres"
+      Necesito saber a que periodo de vacaciones te refieres.
     buttons:
     - title: Verano
       payload: verano
@@ -190,7 +190,7 @@ responses:
       payload: /deny
   utter_ask_formulario_obtener_fecha_AA_CONTINUE_FORM:
   - text: |
-      ¿Te gustaría continuar con el proceso de búsqueda de fechas importantes de la ULPGC?
+      ¿Te gustaría continuar con el proceso de búsqueda de fechas de la ULPGC?
     buttons:
     - title: Si
       payload: /affirm
@@ -198,7 +198,7 @@ responses:
       payload: /deny
   utter_ask_formulario_obtener_contacto_AA_CONTINUE_FORM:
   - text: |
-      ¿Te gustaría continuar con el proceso de búsqueda de contactos importantes de la ULPGC?
+      ¿Te gustaría continuar con el proceso de búsqueda de contactos de la ULPGC?
     buttons:
     - title: Si
       payload: /affirm
@@ -214,13 +214,13 @@ responses:
       Perdón, no reconocemos el nombre del evento que has indicado. Recuerda que los eventos son: curso, clases, vacaciones y examenes. 
   utter_no_trimestre:
   - text: |
-      Perdón, no reconozco el semestre al que te estas refiriendo. Recuerda que los semestres son: "PRIMER SEMESTRE" y "SEGUNDO SEMESTRE".
+      Perdón, no reconozco el semestre al que te estas refiriendo. Recuerda que los semestres son: primer semestre y segundo semestre.
   utter_no_convocatoria:
   - text: |
-      Perdón, no reconozco la convocatoria a la que te refieres. Recuerda que existen tres convocatorias: "ORDINARIA", "EXTRAORDINARIA" y "ESPECIAL".
+      Perdón, no reconozco la convocatoria a la que te refieres. Recuerda que existen tres convocatorias: convocatoria, extraordinaria y especial.
   utter_no_vacaciones:
   - text: |
-      Perdón, no reconozco el periodo vacacional al que te refieres. Recuerda que existen tres periodos de vacaciones: "Semana Santa", "Verano" y "Navidad".
+      Perdón, no reconozco el periodo de vacaciones al que te refieres. Recuerda que existen tres periodos de vacaciones: Semana Santa, Verano y Navidad.
   utter_mostrar_localizacion_resultado:
   - text: La carrera {n_carrera} tiene como sede la facultad [{college}]({location_link}).
   utter_mostrar_localizacion_institucion_resultado:
@@ -228,7 +228,7 @@ responses:
   utter_out_of_scope:
   - text: Perdón, no estoy preparado para responder a este tipo de preguntas.
   utter_noworries:
-  - text: Siempre es un placer ayudarte. :)
+  - text: Siempre es un placer ayudarte.
   utter_ask_handoff:
   - text: Parece que quieres que te transfiera a un agente humano.
   utter_ask_whatelse:
@@ -239,7 +239,7 @@ responses:
   - text: Contacto [ULPGC]({handoffhost}).
   utter_rephrase:
   - text: No te he entendido, ¿Puedes repetir la pregunta?
-  - text: Perdón, no he pillado tu pregunta. ¿Me la repites?
+  - text: Perdón, ¿Me repites la pregunta?
   utter_mostrar_una_fecha_resultado:
   - text: El {momento} del {n_evento} es el {fecha_obt}
   utter_mostrar_rango_fecha_resultado:
@@ -261,13 +261,13 @@ responses:
   utter_mostrar_rango_fecha_resultado_vac:
   - text: La vacaciones de {n_vac} tienen como inicio {fecha_ini_obt} y como final {fecha_fin_obt}. La duración de las vacaciones de {n_vac} es de {duracion} días.
   utter_formulario_obtener_fecha_cancelado:
-  - text: Busqueda de las fechas cancelada por falta de información.
+  - text: Búsqueda de las fechas cancelada por falta de información.
 #SERVICIO DE AYUDA
   utter_esto_ayuda:
   - text: ¿Esto te ayuda?
   utter_ayuda:
   - text: |-
-      Puedo ayudarte resolviendo los siguientes problemas:
+      Puedo ayudarte resolviendo los siguientes problemas.
     buttons:
     - title: Buscar localizaciones de la ULPGC.
       payload: /ayuda_localizaciones
@@ -282,24 +282,20 @@ responses:
     - title: Funcionalidades extras
       payload: /ayuda_extras
   utter_ayuda_localizaciones:
-  - text: 
-      El servicio de localizaciones te permite obtener la localización de todas las carreras presenciales de la ULPGC. Y además otras instituciones de importancia como la biblioteca, el servicio de información al estudiante...
-      Prueba a escribir '¿Dónde está mi facultad?'.
+  - text: "El 'servicio de localizaciones' te permite obtener la localización de todas las carreras presenciales de la ULPGC. Y además otras instituciones de importancia como la biblioteca, el servicio de información al estudiante...\n
+  Prueba a escribir '¿Dónde está mi facultad?'"
   utter_ayuda_fechas:
-  - text: 
-      El servicio de fechas importantes te permite obtener las fechas y duración de los eventos importantes del curso. Los eventos importantes son 'curso académico', 'periodo de clases', 'periodo de exámenes' y 'vacaciones'.
-      Prueba a escribir '¿Cuándo empiezan los exámenes?'.
+  - text: "El 'servicio de fechas' te permite obtener las fechas o duración de los eventos importantes del curso. Los eventos importantes son 'curso académico', 'periodo de clases', 'periodo de exámenes' y 'vacaciones'.\n
+      Prueba a escribir '¿Cuándo empiezan los exámenes?'."
   utter_ayuda_conceptos:
-  - text: 
-      El servicio de conceptos importantes te permite obtener las definiciones de algunos conceptos. Por ejemplo 'convocatoria', 'grado', 'doctorado', 'beca'...
-      Prueba a escribir 'Define beca'.
+  - text: "El 'servicio de conceptos' te permite obtener las definiciones de algunos conceptos. Por ejemplo 'convocatoria', 'grado', 'doctorado', 'beca'...\n
+      Prueba a escribir 'Define beca'."
   utter_ayuda_extras:
-  - text:
-      A parte de los demás servicios el chatbot es capaz de responder preguntas sencillas acerca los grados de la ULPGC. Preguntas relacionadas con las carreras existentes, las modalidades (presencial o no), ramas de estudio o notas de corte.
-      Prueba a escribir '¿Cuántas carreas tiene la ULPGC?', '¿Cuales son las carreras de modalidad presencial?',¿Cuales son las carreras de la rama de salud? o  '¿Cuales son las carreras con nota de corte 5?'.
+  - text: "A parte de los demás servicios el chatbot es capaz de responder preguntas sencillas acerca los grados de la ULPGC. Preguntas relacionadas con las carreras existentes, las modalidades (presencial o no), ramas de estudio o notas de corte.\n
+      Prueba a escribir '¿Cuántas carreas tiene la ULPGC?', '¿Cuales son las carreras de modalidad presencial?', ¿Cuales son las carreras de la rama de salud? o  '¿Cuales son las carreras con nota de corte 5?'."
   utter_ayuda_contactos:
-  - text:
-      El servicio de búsqueda de contactos te permite obtener contactos sobre entidades importantes de la ULPGC. Prueba a escribir ‘contactar con el aula de idiomas’.
+  - text: "El servicio de búsqueda de contactos te permite obtener contactos sobre entidades importantes de la ULPGC.\n
+      Prueba a escribir ‘contactar con el aula de idiomas’."
   utter_ayuda_miulpgc:
   - text:
       Este sistema tiene como objetivo ayudar al estudiante a comprender la interfaz de MiULPGC. Explicaremos de forma genérica cual es la utilidad de los diferentes menús.
@@ -318,7 +314,7 @@ responses:
       payload: /ayuda
   utter_mis_datos_info:
   - text: "En este menú podemos ver y modificar nuestros datos relacionados con nuestras credenciales en la ULPGC. Podemos ver mi contraseña, mis datos y mi perfil.\n
-      Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)"
+        Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)"
     buttons:
     - title: Mis datos
       payload: /mis_datos_info
@@ -386,7 +382,7 @@ responses:
       payload: /ayuda
   utter_mi_matricula_info:
   - text: "En este menú tenemos los submenús de mayor interés para el estudiante. Aquí podrá matricularse para un nuevo año y ver información referente a las asignaturas, profesores y expediente de su carrera.
-          \n Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)"
+          \n Puedes probar en [MiULPGC](https://identificate.ulpgc.es/cas/login)."
     buttons:
     - title: Mis datos
       payload: /mis_datos_info
@@ -402,8 +398,7 @@ responses:
       payload: /ayuda
 #SERVICIO DE OBTENCION DE CONTACTOS
   utter_ask_formulario_obtener_contacto_contacto:
-  - text: |
-      "Necesito saber sobre que contacto en concreto necesitas información"
+  - text: Necesito saber sobre que contacto en concreto necesitas información.
     buttons:
     - title: Servicio de Información al Estudiante
       payload: servicio de información al estudiante
@@ -424,11 +419,9 @@ responses:
     - title: Servicio de Informática
       payload: servicio de informática
   utter_no_contacto:
-  - text: |
-      Perdón, no reconocemos el contacto con el que quieres contactar.
+  - text: Perdón, no reconocemos el contacto con el que quieres contactar.
   utter_formulario_obtener_contacto_cancelado:
-  - text: |
-      Busqueda de contactos cancelada por falta de información.
+  - text: Busqueda de contactos cancelada por falta de información.
   utter_mostrar_contactos:
   - text: 
       "Los métodos de contacto para el contacto {n_contacto} son:\n
